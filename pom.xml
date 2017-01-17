@@ -39,6 +39,7 @@
         <module>remoting</module>
         <module>busservice</module>
         <module>pagecore</module>
+        <module>common</module>
     </modules>
 
 
