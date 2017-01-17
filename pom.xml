@@ -40,6 +40,7 @@
         <module>busservice</module>
         <module>pagecore</module>
         <module>common</module>
+        <module>eureka</module>
     </modules>
 
 
