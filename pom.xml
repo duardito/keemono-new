@@ -36,6 +36,9 @@
         <module>core</module>
         <module>api</module>
         <module>security</module>
+        <module>remoting</module>
+        <module>busservice</module>
+        <module>pagecore</module>
     </modules>
 
 
