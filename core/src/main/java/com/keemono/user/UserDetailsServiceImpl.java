@@ -1,13 +1,20 @@
-package com.keemono.configuration;
+package com.keemono.user;
 
+import com.keemono.common.security.user.CerberusUserFactory;
+import com.keemono.common.security.user.UserSecurity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 
 /**
  * Created by eduard.frades on 18/1/17.
  */
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
@@ -26,7 +33,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
         } else {
-            return CerberusUserFactory.create(user);
+            UserSecurity security = new UserSecurity();
+            security.setId(user.getId());
+            security.setAuthorities(user.getAuthorities());
+            security.setUsername(user.getUsername());
+            security.setUuid(user.getUuid());
+            return CerberusUserFactory.create(security);
         }
     }
 }
