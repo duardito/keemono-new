@@ -1,8 +1,12 @@
 package com.keemono.api;
 
+import org.springframework.web.bind.annotation.RestController;
+
 /**
  * Created by eduard.frades on 17/1/17.
  */
-public class PageController
-{
+
+@RestController
+public class PageController {
+
 }
