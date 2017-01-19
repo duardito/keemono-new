@@ -1,7 +1,9 @@
-package com.keemono.user;
+package com.keemono.core.user.service.impl;
 
 import com.keemono.common.security.user.CerberusUserFactory;
-import com.keemono.common.security.user.UserSecurity;
+import com.keemono.common.security.user.CerberusUserSecurity;
+import com.keemono.core.user.domain.User;
+import com.keemono.core.user.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -33,7 +35,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
         } else {
-            UserSecurity security = new UserSecurity();
+            CerberusUserSecurity security = new CerberusUserSecurity();
             security.setId(user.getId());
             security.setAuthorities(user.getAuthorities());
             security.setUsername(user.getUsername());

@@ -8,7 +8,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
  */
 public class CerberusUserFactory {
 
-    public static CerberusUser create(UserSecurity user) {
+    public static CerberusUser create(CerberusUserSecurity user) {
         return new CerberusUser(
                 user.getUuid(),
                 user.getId(),

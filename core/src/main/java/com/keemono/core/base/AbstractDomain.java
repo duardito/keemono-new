@@ -1,4 +1,4 @@
-package com.keemono.user;
+package com.keemono.core.base;
 
 import javax.persistence.*;
 import java.io.Serializable;

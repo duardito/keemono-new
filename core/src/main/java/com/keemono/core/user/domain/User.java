@@ -1,53 +1,41 @@
-package com.keemono.common.security.user;
+package com.keemono.core.user.domain;
 
+import com.keemono.core.base.AbstractDomain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * Created by eduard.frades on 18/1/17.
  */
-public class UserSecurity {
+@Entity
+@Table(name = "user")
+public class User extends AbstractDomain {
 
+    public User(){
+        super(User.class.getName());
+    }
+
+
+    @Column(name = "lastName", length = 2000)
     private String lastName;
 
+    @Column(name = "email", nullable = false,length = 255)
     private String email;
 
+    @Column(name = "username", nullable = false,length = 255)
     private String username;
 
+    @Column(name = "password", nullable = false,length = 255)
     private String password;
 
+    @Column(name = "lastPasswordReset")
     private Date lastPasswordReset;
 
+    @Column(name = "authorities")
     private String authorities;
-
-    private Long id;
-
-    private String name;
-
-    private String uuid;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
 
     public String getUsername() {
         return username;
@@ -96,5 +84,6 @@ public class UserSecurity {
     public void setEmail(String email) {
         this.email = email;
     }
+
 
 }

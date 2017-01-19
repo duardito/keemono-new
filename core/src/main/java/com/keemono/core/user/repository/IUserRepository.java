@@ -1,4 +1,6 @@
-package com.keemono.user;
+package com.keemono.core.user.repository;
+
+import com.keemono.core.user.domain.User;
 
 import java.util.List;
 

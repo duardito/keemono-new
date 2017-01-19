@@ -1,5 +1,7 @@
-package com.keemono.user;
+package com.keemono.core.user.repository.impl;
 
+import com.keemono.core.user.domain.User;
+import com.keemono.core.user.repository.IUserRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.List;
  */
 @Repository
 public class UserRepositoryImpl implements IUserRepository {
+
     @Override
     public User findOne(String uuid) {
         return null;
