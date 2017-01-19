@@ -1,4 +1,4 @@
-package com.keemono.configuration;
+package com.keemono.security.configuration;
 
 import com.keemono.common.security.user.CerberusUser;
 import io.jsonwebtoken.Claims;

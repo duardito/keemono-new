@@ -1,4 +1,4 @@
-package com.keemono.configuration;
+package com.keemono.security.configuration;
 
 /**
  * Created by eduard.frades on 18/1/17.

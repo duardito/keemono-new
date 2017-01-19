@@ -1,4 +1,4 @@
-package com.keemono.configuration;
+package com.keemono.security.configuration;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
